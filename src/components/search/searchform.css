@@ -1,0 +1,6 @@
+.search-form {
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
