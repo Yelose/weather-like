@@ -1,6 +1,13 @@
-.search-form {
-  padding: 2vh 2vw;
+.search-form, .last-search-items {
   display: flex;
   flex-direction: column;
+}
+
+.search-form {
+  padding: 2vh 2vw;
   gap: 2vh;
+}
+.last-search-items {
+  text-align: center;
+  border-bottom: 3px solid rgba(0, 139, 252, 0.7);
 }

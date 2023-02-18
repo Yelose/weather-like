@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <section>
+    <footer className="footer-container">
       <p>This app was made by Yelose</p>
-    </section>
+    </footer>
   );
 }
