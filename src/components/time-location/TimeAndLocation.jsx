@@ -1,7 +1,9 @@
 import { daysOfTheWeek } from "./timelocation";
 import { monthsNames } from "./timelocation";
 
-export default function TimeAndLocation() {
+export default function TimeAndLocation({
+  weather: { dt, timezone, name, country },
+}) {
   const weekDayNumber = new Date().getDay().toString();
   const dayNow = new Date().getDate().toString();
   const monthNow = new Date().getMonth().toString();

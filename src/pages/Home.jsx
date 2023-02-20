@@ -2,19 +2,30 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TimeAndLocation from "../components/time-location/TimeAndLocation";
 import getFormattedWeatherData from "../services/weatherService";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const fetchWeather = async () => {
-    const data = await getFormattedWeatherData({ q: "london" });
-    console.log(data);
-  };
+  const [query, setQuery] = useState({ q: "berlin" });
+  const [units, setUnits] = useState("metric");
+  const [weather, setWeather] = useState(null);
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      await getFormattedWeatherData({ ...query, units }).then((data) => {
+        setWeather(data);
+      });
+    };
+    fetchWeather();
+  }, [query, units]);
+
   fetchWeather();
+
   return (
     <main>
       <section>
         <h2>Home Page</h2>
 
-        <TimeAndLocation />
+        <TimeAndLocation weather={weather} />
       </section>
       <Link to="/detail">
         <Button
