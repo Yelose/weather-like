@@ -6,6 +6,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 
 export default function SearchForm() {

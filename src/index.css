@@ -18,12 +18,11 @@
   flex-flow: row wrap;
 }
 
-.main-content > aside {
+.main-content > .side-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  background-color: hsl(210, 79%, 96%);
   gap: 10vh;
   box-shadow: 1px 3px 5px 1px rgb(167, 167, 167);
 }

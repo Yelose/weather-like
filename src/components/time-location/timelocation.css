@@ -1,0 +1,7 @@
+.time-location-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3vh 2vw;
+  gap: 2vh;
+  align-items: center;
+}

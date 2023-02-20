@@ -3,9 +3,10 @@ import Button from "@mui/material/Button";
 import TimeAndLocation from "../components/time-location/TimeAndLocation";
 import getFormattedWeatherData from "../services/weatherService";
 import { useEffect, useState } from "react";
+import { TemperatureDetails } from "../components/temperature/TemperatureDetails";
 
 export default function Home() {
-  const [query, setQuery] = useState({ q: "berlin" });
+  const [query, setQuery] = useState({ q: "madrid" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
@@ -18,15 +19,16 @@ export default function Home() {
     fetchWeather();
   }, [query, units]);
 
-  fetchWeather();
+  console.log(weather);
 
   return (
     <main>
-      <section>
-        <h2>Home Page</h2>
-
-        <TimeAndLocation weather={weather} />
-      </section>
+      {weather && (
+        <section>
+          <TimeAndLocation weather={weather} />
+          <TemperatureDetails weather={weather} />
+        </section>
+      )}
       <Link to="/detail">
         <Button
           sx={{

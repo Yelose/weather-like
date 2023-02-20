@@ -1,6 +1,7 @@
-import { daysOfTheWeek } from "./timelocation";
-import { monthsNames } from "./timelocation";
-
+import { Grid, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import { formatToLocalTime } from "../../services/weatherService";
+import { blue } from "@mui/material/colors";
 export default function TimeAndLocation({
   weather: { dt, timezone, name, country },
 }) {
@@ -10,11 +11,25 @@ export default function TimeAndLocation({
   const yearNow = new Date().getFullYear().toString();
 
   return (
-    <div className="time-location-container">
-      <h3>
-        {daysOfTheWeek[weekDayNumber - 1]}, {dayNow} of {monthsNames[monthNow]}{" "}
-        {yearNow}
-      </h3>
-    </div>
+    <Box className="time-location-container" sx={{ backgroundColor: blue[50] }}>
+      <Grid container spacing={2}>
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h3">
+            <span>{name}</span> <span>{country}</span>
+          </Typography>
+          <Typography variant="subtitle2">
+            {formatToLocalTime(dt, timezone)}
+          </Typography>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
