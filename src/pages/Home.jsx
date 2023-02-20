@@ -6,9 +6,24 @@ import { useEffect, useState } from "react";
 import { TemperatureDetails } from "../components/temperature/TemperatureDetails";
 
 export default function Home() {
-  const [query, setQuery] = useState({ q: "madrid" });
+  // let getClientIp = async () => {
+  //   const clientIp = await fetch("https://ipinfo.io/json").then((res) =>
+  //     res.json()
+  //   );
+  //   return clientIp;
+  // };
+
+  const [query, setQuery] = useState({ q: "Madrid" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
+  // async function getIpClient() {
+  //   try {
+  //     const response = await axios.get('https://ipinfo.io/json');
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   useEffect(() => {
     const fetchWeather = async () => {
