@@ -23,10 +23,18 @@ export default function TimeAndLocation({
           }}
         >
           <Typography variant="h3">
-            <span>{name}</span> <span>{country}</span>
+            <span>
+              {/* {name} */}
+              City
+            </span>{" "}
+            <span>
+              Country
+              {/* {country} */}
+            </span>
           </Typography>
           <Typography variant="subtitle2">
-            {formatToLocalTime(dt, timezone)}
+            local time
+            {/* {formatToLocalTime(dt, timezone)} */}
           </Typography>
         </Grid>
       </Grid>

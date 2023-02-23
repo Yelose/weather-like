@@ -6,42 +6,50 @@ import { useEffect, useState } from "react";
 import { TemperatureDetails } from "../components/temperature/TemperatureDetails";
 
 export default function Home() {
-  // let getClientIp = async () => {
-  //   const clientIp = await fetch("https://ipinfo.io/json").then((res) =>
-  //     res.json()
-  //   );
-  //   return clientIp;
-  // };
+  var city = "";
 
-  const [query, setQuery] = useState({ q: "Madrid" });
+  const fetchCity = async () => {
+    let result = await fetch("https://get.geojs.io/v1/ip/geo.json");
+    let body = await result.json();
+    city = body.city;
+    return city;
+  };
+
+  const [query, setQuery] = useState({ q: "madrid" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
-  // async function getIpClient() {
-  //   try {
-  //     const response = await axios.get('https://ipinfo.io/json');
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error(error);
+
+  // setQuery({ q: localCity });
+  // useEffect(() => {
+  //   const fetchWeather = async () => {
+  //     await getFormattedWeatherData({ ...query, units }).then((data) => {
+  //       setWeather(data);
+  //     });
+  //   };
+  //   fetchWeather();
+  // }, [query, units]);
+  // console.log(weather);
+
+  // probar con windows.city para ver si es un problema de scope de useEffect
+  // useEffect(() => {
+  //   if (city == null || city == undefined) {
+  //     const fetchLocalCity = async () => {
+  //       await fetchCity().then((city) => {
+  //         setQuery({ q: city });
+  //       });
+  //       fetchLocalCity();
+  //     };
   //   }
-  // }
+  // });
 
-  useEffect(() => {
-    const fetchWeather = async () => {
-      await getFormattedWeatherData({ ...query, units }).then((data) => {
-        setWeather(data);
-      });
-    };
-    fetchWeather();
-  }, [query, units]);
-
-  console.log(weather);
+  console.log(city);
 
   return (
     <main>
       {weather && (
         <section>
-          <TimeAndLocation weather={weather} />
-          <TemperatureDetails weather={weather} />
+          {/* <TimeAndLocation /> */}
+          {/* <TemperatureDetails /> */}
         </section>
       )}
       <Link to="/detail">
