@@ -16,13 +16,13 @@ export default function App() {
         <aside>
           <SearchForm />
         </aside>
-        <section>
+        <section className="router-content">
           <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="detail" element={<Detail />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="detail" element={<Detail />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
           </main>
           <Footer />
         </section>

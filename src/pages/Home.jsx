@@ -8,7 +8,9 @@ export default function Home() {
     const data = await getFormattedWeatherData({ q: "london" });
     console.log(data);
   };
+
   fetchWeather();
+
   return (
     <main>
       <section>

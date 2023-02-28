@@ -11,25 +11,3 @@
   flex-direction: column;
   height: 100vh;
 }
-
-.main-content {
-  display: flex;
-  flex: 1;
-  flex-flow: row wrap;
-}
-
-.main-content > aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  background-color: hsl(210, 79%, 96%);
-  gap: 10vh;
-  box-shadow: 1px 3px 5px 1px rgb(167, 167, 167);
-}
-
-.main-content > section {
-  display: flex;
-  flex-direction: column;
-  flex: 4;
-}

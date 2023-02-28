@@ -1,3 +1,4 @@
+import "./timelocation.css";
 import { daysOfTheWeek } from "./timelocation";
 import { monthsNames } from "./timelocation";
 

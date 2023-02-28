@@ -5,6 +5,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 import NightsStayTwoToneIcon from "@mui/icons-material/NightsStayTwoTone";
+import HomeIcon from "@mui/icons-material/Home";
+import { Link } from "react-router-dom";
 
 export default function HeaderComponent() {
   return (
@@ -18,9 +20,21 @@ export default function HeaderComponent() {
             sx={{ mr: 2 }}
           />
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, textAlign: "center" }}
+          >
             Weather Like
           </Typography>
+          <Link to="/">
+            <HomeIcon
+              size="large"
+              edge="start"
+              aria-label="home"
+              sx={{ ml: 2, color: "white" }}
+            />
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>
