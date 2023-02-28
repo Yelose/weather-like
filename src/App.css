@@ -1,4 +1,10 @@
 @import "../src/components/search/searchform.css";
+@import "../src/components/footer/footer.css";
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .main-content {
   display: flex;
@@ -7,24 +13,21 @@
 }
 
 .main-content > aside {
+  position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
   background-color: hsl(210, 79%, 96%);
-  gap: 10vh;
   box-shadow: 1px 3px 5px 1px rgb(167, 167, 167);
-}
-
-.main-content > section {
-  display: flex;
-  flex-direction: column;
-  flex: 4;
+  justify-content: space-around;
 }
 
 .router-content {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  max-height: calc(100vh - 64px);
 }
 
 .router-content > main {

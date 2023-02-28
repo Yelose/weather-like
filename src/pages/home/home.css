@@ -1,0 +1,31 @@
+.sunny {
+  background-image: url("../../assets/img/sunny.jpg");
+}
+.afternoon {
+  background-image: url("../../assets/img/afternoon.jpg");
+}
+.evening {
+  background-image: url("../../assets/img/evening.jpg");
+}
+.night {
+  background-image: url("../../assets/img/night.jpg");
+  color: white;
+}
+.sunrise {
+  background-image: url("../../assets/img/sunrise.jpg");
+}
+.sunset {
+  background-image: url("../../assets/img/sunset.jpg");
+}
+
+.sunny,
+.afternoon,
+.evening,
+.night,
+.sunrise,
+.sunset {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+}

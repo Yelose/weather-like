@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import { Link } from "react-router-dom";
 
 export default function SearchForm() {
   const cities = [
@@ -36,19 +37,21 @@ export default function SearchForm() {
       <form className="search-form">
         <TextField id="filled-basic" label="City Name" variant="filled" />
         <TextField id="filled-basic" label="Post Code" variant="filled" />
-        <Button
-          type="submit"
-          sx={{
-            backgroundColor: "secondary.dark",
-            "&:hover": {
-              backgroundColor: "secondary.main",
-              opacity: [0.9, 0.9, 0.9],
-            },
-          }}
-          variant="contained"
-        >
-          Search
-        </Button>
+        <Link to="/detail">
+          <Button
+            type="submit"
+            sx={{
+              backgroundColor: "secondary.dark",
+              "&:hover": {
+                backgroundColor: "secondary.main",
+                opacity: [0.9, 0.9, 0.9],
+              },
+            }}
+            variant="contained"
+          >
+            Search
+          </Button>
+        </Link>
       </form>
       <section className="last-search-items">
         <Box

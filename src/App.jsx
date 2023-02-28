@@ -4,7 +4,7 @@ import HeaderComponent from "./components/header/HeaderComponent";
 import SearchForm from "./components/search/SearchForm";
 import Detail from "./pages/Detail";
 import Error from "./pages/Error";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 
 export default function App() {
   return (
