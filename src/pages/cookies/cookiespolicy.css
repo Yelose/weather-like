@@ -1,0 +1,9 @@
+.cookies-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
+  padding: 5vh 3vw;
+}

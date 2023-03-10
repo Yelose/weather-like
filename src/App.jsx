@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import HeaderComponent from "./components/header/HeaderComponent";
-import SearchForm from "./components/search/SearchForm";
-import Detail from "./pages/Detail";
-import Error from "./pages/Error";
-import Home from "./pages/Home";
+import CookiesPolicy from "./pages/cookies/CookiesPolicy";
+import Detail from "./pages/detail/Detail";
+import Error from "./pages/error/Error";
+import Home from "./pages/home/Home";
 
 export default function App() {
   return (
@@ -13,16 +13,14 @@ export default function App() {
         <HeaderComponent />
       </header>
       <main className="main-content">
-        <aside>
-          <SearchForm />
-        </aside>
-        <section>
+        <section className="router-content">
           <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="detail" element={<Detail />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="detail" element={<Detail />} />
+              <Route path="cookies" element={<CookiesPolicy />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
           </main>
           <Footer />
         </section>
