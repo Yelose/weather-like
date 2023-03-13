@@ -9,9 +9,11 @@ import {
 } from "@mui/material";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import { Link } from "react-router-dom";
-import { alignRight, centerAlign } from "../../styles/styles";
+import { alignRight, centerAlign, columnCentered } from "../../styles/styles";
 
 export default function SearchForm() {
+  // useSelector() de city;
+
   const cities = [
     {
       id: 1,
@@ -35,7 +37,7 @@ export default function SearchForm() {
     },
   ];
   return (
-    <Grid container>
+    <Grid container sx={{ padding: "2vw" }}>
       <Grid item xs={12} sm={9} md={10} sx={centerAlign}>
         <form className="search-form">
           <TextField
@@ -54,9 +56,9 @@ export default function SearchForm() {
             <Button
               type="submit"
               sx={{
-                backgroundColor: "secondary.dark",
+                backgroundColor: "primary.dark",
                 "&:hover": {
-                  backgroundColor: "secondary.main",
+                  backgroundColor: "primary.main",
                   opacity: [0.9, 0.9, 0.9],
                 },
               }}
@@ -67,7 +69,7 @@ export default function SearchForm() {
           </Link>
         </form>
       </Grid>
-      <Grid item xs={12} sm={3} md={2} sx={alignRight}>
+      <Grid item xs={12} sm={3} md={2} sx={columnCentered}>
         <Box className="last-search-items">
           <Box
             sx={{
